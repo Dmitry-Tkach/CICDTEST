@@ -1,0 +1,15 @@
+name: Test react app
+on:
+    push:
+        branches: [ master ]
+jobs:
+    Run-npm-on-Ubuntu:
+        name: Run npm on Ubuntu
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get repo code
+              uses: actions/checkout@v3
+            - name: Install deps
+              run: npm ci
+            - name: Test app
+              run: npm run test
