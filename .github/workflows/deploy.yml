@@ -1,20 +1,19 @@
-name: Test and deploy
 on:
-    push:
-        branches: [ master ]
+  push:
+    branches: [ master ]
 jobs:
-    Run-npm-on-Ubuntu:
-        name: Run npm on Ubuntu
-        runs-on: ubuntu-latest
-        steps:
-            - name: Get repo code
-              uses: actions/checkout@v3
-            - name: Install deps
-              run: npm ci
-            - name: Check linting and formatting
-              run: npm run lint
-            - name: Test application
-              run: npm run test
-            - name: Create test build
-              run: npm run build
+  TestandDeploy:
+    name: Test and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: Check linting and formatting
+        run: npm run lint
+      - name: Test application
+        run: npm run test
+      - name: Create test build
+        run: npm run build
               
