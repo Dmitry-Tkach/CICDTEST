@@ -1,4 +1,4 @@
-name: Test react app
+name: Test and deploy
 on:
     push:
         branches: [ master ]
